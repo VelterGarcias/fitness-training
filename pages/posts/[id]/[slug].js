@@ -37,13 +37,8 @@ export default function Post(props) {
         </>
     )
 }
-Post.getInitialProps = async ({query})=>{
 
-    let { id } = query
+Post.getInitialProps = async ({query})=>{
+    console.log(query)
     
-    const post = await Axios.get(`${serverUrl}/posts/${id}`)
-    return {
-        "post": post.data,
-        "id": id
-    }
 }
